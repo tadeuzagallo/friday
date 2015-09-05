@@ -37,8 +37,8 @@ test('XLII', toRoman(42));
 test('XCI', toRoman(91));
 test('MCMXCIX', toRoman(1999));
 
-var functionBody = toRoman.toString().replace(/[\n ]/g, '') // Allow new lines and spaces for readability
+var functionBody = toRoman.toString().replace(/(^ +|\n|\r)/gm, '') // Allow new lines and leading spaces for readability
 
 console.log('');
 console.log('Used unique symbols: ' + new Set(toRoman.toString().split('')).size);
-console.log('Length: ' + toRoman.toString().length);
+console.log('Length: ' + functionBody.length);
